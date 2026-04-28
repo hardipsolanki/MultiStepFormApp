@@ -2,7 +2,7 @@ import StepHeader from "@/components/StepIndicator";
 import { Ionicons } from "@expo/vector-icons";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import * as ImagePicker from "expo-image-picker";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
   Alert,
   Image,
@@ -72,30 +72,30 @@ export default function MultiStepForm() {
   const [imageError, setImageError] = useState("");
 
   // ── Sync local state when redux rehydrates from AsyncStorage ──
-  useEffect(() => {
-    setForm({
-      gender: personal.gender || "",
-      dob: personal.dob || { dd: "", mm: "", yy: "" },
-      nationality: personal.nationality || "",
-      height: personal.height || "",
-    });
-  }, [personal]);
+  // useEffect(() => {
+  //   setForm({
+  //     gender: personal.gender || "",
+  //     dob: personal.dob || { dd: "", mm: "", yy: "" },
+  //     nationality: personal.nationality || "",
+  //     height: personal.height || "",
+  //   });
+  // }, [personal]);
 
-  useEffect(() => {
-    setAddr({
-      city: address.city || "",
-      state: address.state || "",
-      zip: address.zip || "",
-    });
-  }, [address]);
+  // useEffect(() => {
+  //   setAddr({
+  //     city: address.city || "",
+  //     state: address.state || "",
+  //     zip: address.zip || "",
+  //   });
+  // }, [address]);
 
-  useEffect(() => {
-    setProf({
-      job: professional.job || "",
-      company: professional.company || "",
-      exp: professional.exp || "",
-    });
-  }, [professional]);
+  // useEffect(() => {
+  //   setProf({
+  //     job: professional.job || "",
+  //     company: professional.company || "",
+  //     exp: professional.exp || "",
+  //   });
+  // }, [professional]);
 
   // ── Date Picker state ──
   const [showDatePicker, setShowDatePicker] = useState(false);
